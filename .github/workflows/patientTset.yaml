@@ -6,8 +6,15 @@ on:
   pull_request:
     branches: [ "automaticTestTesting" ]
 
+jobs:
+  build:
+    runs-on: windows-latest
 
-tests:
+    strategy:
+      matrix:
+        node-version: [14.x, 18.x, 20.x]
+
+
   - name: "Patient Dashboard Test"
     steps:
       - name: "Render Patient Dashboard"
