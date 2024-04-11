@@ -1,3 +1,12 @@
+name: Med Track CI
+
+on:
+  push:
+    branches: [ "automaticTestTesting" ]
+  pull_request:
+    branches: [ "automaticTestTesting" ]
+
+
 tests:
   - name: "Patient Dashboard Test"
     steps:
