@@ -1,0 +1,40 @@
+tests:
+  - name: "Patient Dashboard Test"
+    steps:
+      - name: "Render Patient Dashboard"
+        render: "PatientDashboard"
+        verify:
+          - element: "header"
+            text: "Welcome to Patient Dashboard"
+          - element: "button"
+            text: "Edit Account"
+          - element: "button"
+            text: "View Appointments Records"
+          - element: "button"
+            text: "Create Appointments"
+          - element: "button"
+            text: "Log Out"
+  
+  - name: "Appointment Records Test"
+    steps:
+      - name: "Render Appointment Records"
+        render: "AppointmentRecords"
+        verify:
+          - element: "header"
+            text: "View your Appointments"
+          - element: "table"
+            exists: true
+          - element: "button"
+            text: "Patient Dashboard"
+  
+  - name: "Edit Account Details Test"
+    steps:
+      - name: "Render Edit Account Details"
+        render: "EditAccountDetails"
+        verify:
+          - element: "header"
+            text: "Welcome to Edit Account"
+          - element: "form"
+            exists: true
+          - element: "button"
+            text: "Patient Dashboard"
