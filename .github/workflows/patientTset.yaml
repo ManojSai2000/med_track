@@ -1,4 +1,4 @@
-name: Med Track CI
+name: patient board CI
 
 on:
   push:
