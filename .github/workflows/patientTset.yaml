@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [ "automaticTestTesting" ]
 
-steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
 jobs:
   build:
     runs-on: windows-latest
@@ -16,8 +13,11 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x, 18.x, 20.x]
-
-  - name: "Patient Dashboard Test"
+steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+ 
+ - name: "Patient Dashboard Test"
     steps:
       - name: "Render Patient Dashboard"
         render: "PatientDashboard"
