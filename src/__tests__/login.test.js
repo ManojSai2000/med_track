@@ -46,14 +46,14 @@ describe('Login Component', () => {
         });
 
         const { emailInput, passwordInput, submitButton } = setup();
-        fireEvent.change(emailInput, { target: { value: 'john.doe@example.com' } });
+        fireEvent.change(emailInput, { target: { value: 'jane.doe@example.com' } });
         fireEvent.change(passwordInput, { target: { value: 'password123' } });
         fireEvent.click(submitButton);
 
         await waitFor(() => {
             expect(signInWithEmailAndPassword).toHaveBeenCalledWith(
                 auth,
-                'john.doe@example.com',
+                'jane.doe@example.com',
                 'password123'
             );
             expect(mockNavigate).toHaveBeenCalledWith('/dashboard');
@@ -64,7 +64,7 @@ describe('Login Component', () => {
         signInWithEmailAndPassword.mockRejectedValue(new Error('Failed to sign in'));
 
         const { emailInput, passwordInput, submitButton } = setup();
-        fireEvent.change(emailInput, { target: { value: 'john.doe@example.com' } });
+        fireEvent.change(emailInput, { target: { value: 'jane.doe@example.com' } });
         fireEvent.change(passwordInput, { target: { value: 'password123' } });
         fireEvent.click(submitButton);
 
